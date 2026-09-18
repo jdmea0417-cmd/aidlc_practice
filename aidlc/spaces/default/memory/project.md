@@ -185,6 +185,8 @@
 
 - 추적 파일의 상위 항목 목록에는 이 단계가 답한 항목뿐 아니라 산출물 본문이 근거로 인용한 항목도 모두 넣는다. 본문이 인용했는데 추적에 없으면 다음 단계가 커버리지를 잘못 판단하고, 이 누락은 검토에 가서야 드러난다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:infrastructure-design:96af1efce048082a2cb339a55645cf55f0b94f57fb52f4e3da9ada46fe2af621 -->
 
+- 검토자에게 검증 도구를 돌리게 할 때는 실행 흔적이 작업 공간에 남지 않는 형태로 명령을 준다. 파이썬이면 바이트코드 생성을 끄고 캐시 제공자를 비활성화하며 커버리지 파일을 남기지 않는다. 그런 파일은 무시 규칙에 들어 있어도 소스 지문 계산에는 포함되므로, 검토자가 성실히 검증할수록 판정이 기록되지 못하는 상태가 된다. 검토를 요청하기 전에 기존 캐시도 함께 지운다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:code-generation:75b431cc5d5398ac63bb203e0b8a176bd9f28528a263b90299b5d76e000b9388 -->
+
 ## Forbidden
 - NEVER add any H2 heading other than `Q<n>`, `Requested Changes Feedback`, or a
   single `Assumption Confirmation` after the consolidated summary in a

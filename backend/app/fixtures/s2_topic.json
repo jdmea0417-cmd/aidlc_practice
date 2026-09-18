@@ -1,0 +1,52 @@
+{
+  "__note": "합성 대화 픽스처 — 이 파일 한 벌이 단일 출처다 (BR4.3, NFR14.1). Mock 제공자가 런타임에 돌려주는 고정 응답과 시험의 기대값을 같은 벌로 다룬다. 출처는 docs/input/05_synthetic-test-data.md §S2 이며, 값을 코드나 시험에 옮겨 적지 않는다. 전부 합성 데이터다 (SC-02).",
+  "conversationKey": "conv_topic_02",
+  "scenarioId": "S2",
+  "title": "주제 유지·전환 (잘한 장면 위주)",
+  "context": {
+    "relation": "보호자",
+    "place": "집",
+    "purpose": "저녁 메뉴 정하기",
+    "userGoal": "피자 먹고 싶다고 말하기"
+  },
+  "transcripts": {
+    "1": [
+      { "id": "u1", "speaker": "PARTNER", "text": "오늘 저녁 뭐 먹을까?", "unclear": false },
+      { "id": "u2", "speaker": "USER", "text": "피자 먹고 싶어요.", "unclear": false },
+      { "id": "u3", "speaker": "PARTNER", "text": "어제도 피자 먹었잖아.", "unclear": false },
+      { "id": "u4", "speaker": "USER", "text": "그럼 치킨은요?", "unclear": false },
+      { "id": "u5", "speaker": "PARTNER", "text": "좋아, 치킨 먹자.", "unclear": false },
+      { "id": "u6", "speaker": "USER", "text": "아 그리고 내일 소풍 가요.", "unclear": false }
+    ]
+  },
+  "judgments": {
+    "1": [
+      {
+        "group": "RESPONSE_RELEVANCE",
+        "opportunity": "PRESENT",
+        "result": "OBSERVED",
+        "holdReason": null,
+        "evidence": [
+          { "utteranceId": "u1", "role": "OPPORTUNITY" },
+          { "utteranceId": "u2", "role": "RESPONSE" },
+          { "utteranceId": "u3", "role": "OPPORTUNITY" },
+          { "utteranceId": "u4", "role": "RESPONSE" }
+        ]
+      },
+      {
+        "group": "CLARIFICATION_REPAIR",
+        "opportunity": "ABSENT",
+        "result": null,
+        "holdReason": "NO_OPPORTUNITY",
+        "evidence": []
+      },
+      {
+        "group": "TOPIC_MAINTENANCE",
+        "opportunity": "PRESENT",
+        "result": "OBSERVED",
+        "holdReason": null,
+        "evidence": [{ "utteranceId": "u6", "role": null }]
+      }
+    ]
+  }
+}

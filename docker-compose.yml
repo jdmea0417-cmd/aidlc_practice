@@ -1,0 +1,49 @@
+# U1 백엔드 기반이 소유하는 구성이다.
+# frontend 서비스는 u2-web-foundation 이 자기 항목으로 더한다 — 여기서 정의하지 않는다
+# (infrastructure-specification.md §2).
+services:
+  postgres:
+    image: postgres:16
+    environment:
+      POSTGRES_USER: scd
+      POSTGRES_PASSWORD: scd_local_dev
+      POSTGRES_DB: scd_coach
+    volumes:
+      - postgres-data:/var/lib/postgresql/data
+    # 포트를 호스트로 열지 않는다 — 로컬 전용이라 분리할 신뢰 구역이 없고, 열 이유도 없다
+    healthcheck:
+      test: ["CMD-SHELL", "pg_isready -U scd -d scd_coach"]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 0s
+
+  backend:
+    build:
+      context: ./backend
+    environment:
+      # 기본 실행 경로는 mock 이다 (SC-04). live 로 바꾸려면 키를 함께 넣어야 기동한다.
+      ANALYSIS_MODE: mock
+      DATABASE_URL: postgresql+psycopg://scd:scd_local_dev@postgres:5432/scd_coach
+      UPLOAD_STORAGE_PATH: /data/audio
+      LOG_LEVEL: INFO
+    ports:
+      - "8000:8000"
+    volumes:
+      - audio-data:/data/audio
+    # backend 는 저장소를 기다리지 않고 바로 뜬다. 저장소가 붙기 전까지 헬스체크만 실패한다
+    # (infrastructure-specification.md §1 기동 순서).
+    depends_on:
+      - postgres
+    healthcheck:
+      test: ["CMD-SHELL", "python -c \"import urllib.request,sys; sys.exit(0 if urllib.request.urlopen('http://localhost:8000/api/v1/health', timeout=3).status == 200 else 1)\""]
+      interval: 5s
+      timeout: 3s
+      retries: 12
+      start_period: 0s
+    # 자동 재시작을 걸지 않는다 — 멈춘 컨테이너 자체가 신호다 (reliability-design.md §6)
+    # 자원 한도도 걸지 않는다 — 노트북 사양이 제각각이다 (infrastructure-specification.md §1)
+
+volumes:
+  postgres-data:
+  audio-data:
