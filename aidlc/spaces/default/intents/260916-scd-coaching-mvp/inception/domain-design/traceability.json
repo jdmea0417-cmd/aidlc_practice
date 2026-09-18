@@ -1,0 +1,229 @@
+{
+  "stage": "domain-design",
+  "upstream_ids": [
+    "US1.1",
+    "US1.2",
+    "US2.1",
+    "US2.2",
+    "US2.3",
+    "US3.1",
+    "US3.2",
+    "US3.3",
+    "US4.1",
+    "US4.2",
+    "US4.3",
+    "US4.4",
+    "US5.1",
+    "US5.2",
+    "US6.1",
+    "US6.2",
+    "US6.3",
+    "US6.4",
+    "US6.5",
+    "US7.1",
+    "US7.2",
+    "US7.3",
+    "US8.1",
+    "US8.2",
+    "US8.3",
+    "US9.1",
+    "US9.2",
+    "US9.3",
+    "US10.1",
+    "US10.2",
+    "US10.3",
+    "US11.1",
+    "US12.1",
+    "US12.2",
+    "US12.3",
+    "US13.1",
+    "US14.1"
+  ],
+  "coverage": [
+    {
+      "id": "US1.1",
+      "status": "OK",
+      "target": "WebApp, Account"
+    },
+    {
+      "id": "US1.2",
+      "status": "OK",
+      "target": "WebApp, Conversation, Training, Record"
+    },
+    {
+      "id": "US2.1",
+      "status": "OK",
+      "target": "Conversation, ProviderAdapters, WebApp"
+    },
+    {
+      "id": "US2.2",
+      "status": "OK",
+      "target": "Conversation, WebApp"
+    },
+    {
+      "id": "US2.3",
+      "status": "OK",
+      "target": "Conversation"
+    },
+    {
+      "id": "US3.1",
+      "status": "OK",
+      "target": "Conversation"
+    },
+    {
+      "id": "US3.2",
+      "status": "OK",
+      "target": "Conversation, Assessment"
+    },
+    {
+      "id": "US3.3",
+      "status": "OK",
+      "target": "Conversation, Assessment, Training"
+    },
+    {
+      "id": "US4.1",
+      "status": "OK",
+      "target": "Assessment, ProviderAdapters"
+    },
+    {
+      "id": "US4.2",
+      "status": "OK",
+      "target": "Assessment, ProviderAdapters"
+    },
+    {
+      "id": "US4.3",
+      "status": "OK",
+      "target": "WebApp, Assessment, Conversation"
+    },
+    {
+      "id": "US4.4",
+      "status": "OK",
+      "target": "Assessment"
+    },
+    {
+      "id": "US5.1",
+      "status": "OK",
+      "target": "Training"
+    },
+    {
+      "id": "US5.2",
+      "status": "OK",
+      "target": "Training"
+    },
+    {
+      "id": "US6.1",
+      "status": "OK",
+      "target": "Training"
+    },
+    {
+      "id": "US6.2",
+      "status": "OK",
+      "target": "Training, Assessment, ProviderAdapters"
+    },
+    {
+      "id": "US6.3",
+      "status": "OK",
+      "target": "Training"
+    },
+    {
+      "id": "US6.4",
+      "status": "OK",
+      "target": "Training"
+    },
+    {
+      "id": "US6.5",
+      "status": "OK",
+      "target": "Training"
+    },
+    {
+      "id": "US7.1",
+      "status": "OK",
+      "target": "Record, Conversation, Training"
+    },
+    {
+      "id": "US7.2",
+      "status": "OK",
+      "target": "Record"
+    },
+    {
+      "id": "US7.3",
+      "status": "OK",
+      "target": "Training, Record"
+    },
+    {
+      "id": "US8.1",
+      "status": "OK",
+      "target": "Privacy, Conversation, Assessment, Training"
+    },
+    {
+      "id": "US8.2",
+      "status": "OK",
+      "target": "Privacy, Training"
+    },
+    {
+      "id": "US8.3",
+      "status": "OK",
+      "target": "Privacy, Conversation"
+    },
+    {
+      "id": "US9.1",
+      "status": "OK",
+      "target": "ProviderAdapters"
+    },
+    {
+      "id": "US9.2",
+      "status": "OK",
+      "target": "ProviderAdapters, Account"
+    },
+    {
+      "id": "US9.3",
+      "status": "OK",
+      "target": "WebApp, ProviderAdapters"
+    },
+    {
+      "id": "US10.1",
+      "status": "OK",
+      "target": "Record, Training"
+    },
+    {
+      "id": "US10.2",
+      "status": "OK",
+      "target": "Record, Training"
+    },
+    {
+      "id": "US10.3",
+      "status": "OK",
+      "target": "Record, Conversation, Assessment"
+    },
+    {
+      "id": "US11.1",
+      "status": "OK",
+      "target": "Account"
+    },
+    {
+      "id": "US12.1",
+      "status": "OK",
+      "target": "Account, Privacy"
+    },
+    {
+      "id": "US12.2",
+      "status": "OK",
+      "target": "Privacy, Record"
+    },
+    {
+      "id": "US12.3",
+      "status": "OK",
+      "target": "Privacy, Conversation"
+    },
+    {
+      "id": "US13.1",
+      "status": "OK",
+      "target": "WebApp"
+    },
+    {
+      "id": "US14.1",
+      "status": "OK",
+      "target": "Training"
+    }
+  ]
+}
