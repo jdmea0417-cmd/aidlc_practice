@@ -52,6 +52,8 @@
 자체를 만드는 단계는 D-56 — ci-pipeline(3.7)을 계획에 다시 넣어 EXECUTE 단계가 20 → 21 이
 되었고, Actions 워크플로와 품질 게이트는 그 단계가 만든다.
 
+- 갈래가 작업 단위를 맡아 진행할 때 승인은 단위가 끝날 때 한 번이 아니라 각 단계가 끝날 때마다 받는다. 잘못 든 방향을 다음 단계가 그 위에 쌓기 전에 잡아 되돌리는 범위를 단계 하나로 묶기 위해서다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:delivery-planning:847e162ce958d372c7b962a48634de44a1e07706b03d2911ef9235ca2dbe912b -->
+
 ## Walking Skeleton
 
 활성 스코프가 `skeleton: on` 이므로 첫 Bolt 는 얇은 종단 슬라이스이고, 혼자 돌리며,
