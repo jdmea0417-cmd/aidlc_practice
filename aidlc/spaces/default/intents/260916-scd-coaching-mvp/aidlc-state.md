@@ -60,6 +60,10 @@
 
 
 
+- **Active Unit**: u2-web-foundation
+
+- **Unit State**: in-progress
+
 ## Phase Progress
 <!-- Status values: Pending, Active, Verified, Skipped -->
 
@@ -120,7 +124,7 @@ Per unit: [TBD]
 <!-- Derived, engine-owned projection; routing ignores hand edits. -->
 | unit | owner | functional-design | nfr-requirements | nfr-design | infrastructure-design | code-generation | gate |
 | --- | --- | --- | --- | --- | --- | --- | --- |
-| u1-backend-foundation | - | [x] | [x] | [x] | [x] | [?] | [?] |
+| u1-backend-foundation | - | [x] | [x] | [x] | [x] | [x] | [x] |
 | u2-web-foundation | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | u10-s-detail-views | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
 | u11-s-account-auth | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
@@ -140,7 +144,7 @@ Per unit: [TBD]
 - **Current Stage**: functional-design
 - **Next Stage**: nfr-requirements
 - **Status**: Running
-- **Last Updated**: 2026-09-18T08:42:01Z
+- **Last Updated**: 2026-09-19T00:21:35Z
 
 ## Session Resume Point
 - **Last Completed Stage**: delivery-planning

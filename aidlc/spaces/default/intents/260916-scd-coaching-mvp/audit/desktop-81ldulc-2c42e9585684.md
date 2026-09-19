@@ -13977,3 +13977,214 @@
 **Reason**: other
 
 ---
+
+## Session Start
+**Timestamp**: 2026-09-19T00:02:49Z
+**Event**: SESSION_STARTED
+**Source**: startup
+**Session**: 183102d5-5579-4ce1-8c7c-860a7b96d59f
+
+---
+
+## Human Turn
+**Timestamp**: 2026-09-19T00:02:54Z
+**Event**: HUMAN_TURN
+**Session**: 183102d5-5579-4ce1-8c7c-860a7b96d59f
+
+---
+
+## Plan Approval Blocked
+**Timestamp**: 2026-09-19T00:03:06Z
+**Event**: PLAN_APPROVAL_BLOCKED
+**Tool**: Bash
+**Target**: /dev/null
+**Stage**: code-generation
+**Unit**: u1-backend-foundation
+
+---
+
+## Plan Approval Blocked
+**Timestamp**: 2026-09-19T00:03:09Z
+**Event**: PLAN_APPROVAL_BLOCKED
+**Tool**: Bash
+**Target**: shell command: aidlc --version 2>&1; echo "---grep repo tools---"; grep -rn "refresh-unit-progress" .claude/tools/ | head -20; echo "---tools dir---"; ls .claude/tools/ | head
+**Stage**: code-generation
+**Unit**: u1-backend-foundation
+
+---
+
+## Plan Approval Blocked
+**Timestamp**: 2026-09-19T00:03:11Z
+**Event**: PLAN_APPROVAL_BLOCKED
+**Tool**: Bash
+**Target**: shell command: aidlc --version
+**Stage**: code-generation
+**Unit**: u1-backend-foundation
+
+---
+
+## Plan Approval Blocked
+**Timestamp**: 2026-09-19T00:03:25Z
+**Event**: PLAN_APPROVAL_BLOCKED
+**Tool**: Bash
+**Target**: shell command: sed -n '95,150p' <project-dir>/aidlc/spaces/default/intents/260916-scd-coaching-mvp/aidlc-state.md
+**Stage**: code-generation
+**Unit**: u1-backend-foundation
+
+---
+
+## Error Logged
+**Timestamp**: 2026-09-19T00:05:36Z
+**Event**: ERROR_LOGGED
+**Tool**: aidlc-log
+**Command**: aidlc-log review --help
+**Error**: --help expects a value, got end of arguments.
+
+---
+
+## Human Turn
+**Timestamp**: 2026-09-19T00:07:02Z
+**Event**: HUMAN_TURN
+**Session**: 183102d5-5579-4ce1-8c7c-860a7b96d59f
+
+---
+
+## Plan Approval Blocked
+**Timestamp**: 2026-09-19T00:07:08Z
+**Event**: PLAN_APPROVAL_BLOCKED
+**Tool**: Bash
+**Target**: shell command: docker --version
+**Stage**: code-generation
+**Unit**: u1-backend-foundation
+
+---
+
+## Subagent Completed
+**Timestamp**: 2026-09-19T00:09:16Z
+**Event**: SUBAGENT_COMPLETED
+**Agent Type**: 
+**Agent ID**: a4b3d425b331b7d55
+**Message**: 승인 후 build-and-test에서 돌리자
+
+---
+
+## Human Turn
+**Timestamp**: 2026-09-19T00:10:35Z
+**Event**: HUMAN_TURN
+**Session**: 183102d5-5579-4ce1-8c7c-860a7b96d59f
+
+---
+
+## Subagent Completed
+**Timestamp**: 2026-09-19T00:11:10Z
+**Event**: SUBAGENT_COMPLETED
+**Agent Type**: 
+**Agent ID**: ad7de574fcc57ce53
+**Message**: sudo usermod -aG docker $USER 하고 wsl 재시작할게
+
+---
+
+## Human Turn
+**Timestamp**: 2026-09-19T00:14:25Z
+**Event**: HUMAN_TURN
+**Session**: 183102d5-5579-4ce1-8c7c-860a7b96d59f
+
+---
+
+## Plan Approval Blocked
+**Timestamp**: 2026-09-19T00:14:30Z
+**Event**: PLAN_APPROVAL_BLOCKED
+**Tool**: Bash
+**Target**: shell command: docker ps
+**Stage**: code-generation
+**Unit**: u1-backend-foundation
+
+---
+
+## Subagent Completed
+**Timestamp**: 2026-09-19T00:14:43Z
+**Event**: SUBAGENT_COMPLETED
+**Agent Type**: 
+**Agent ID**: aeb14d6bb0286f136
+**Message**: B로 진행해줘
+
+---
+
+## Human Turn
+**Timestamp**: 2026-09-19T00:15:35Z
+**Event**: HUMAN_TURN
+**Session**: 183102d5-5579-4ce1-8c7c-860a7b96d59f
+
+---
+
+## Human Turn
+**Timestamp**: 2026-09-19T00:16:09Z
+**Event**: HUMAN_TURN
+**Session**: 183102d5-5579-4ce1-8c7c-860a7b96d59f
+
+---
+
+## Gate Approved
+**Timestamp**: 2026-09-19T00:16:21Z
+**Event**: GATE_APPROVED
+**Stage**: code-generation
+**Unit**: u1-backend-foundation
+**Gate Scope**: per-stage
+**Gate Stages**: code-generation
+**User Input**: Approve
+
+---
+
+## Unit Started
+**Timestamp**: 2026-09-19T00:21:35Z
+**Event**: UNIT_STARTED
+**Stage**: functional-design
+**Unit**: u2-web-foundation
+**Run floor**: STAGE_JUMPED:2026-09-17T00:42:17Z#3
+
+---
+
+## Artifact Created
+**Timestamp**: 2026-09-19T00:22:58Z
+**Event**: ARTIFACT_CREATED
+**Tool**: Write
+**File**: <project-dir>/aidlc/spaces/default/intents/260916-scd-coaching-mvp/construction/u2-web-foundation/functional-design/functional-design-questions.md
+**Context**: construction > u2-web-foundation > functional-design > functional-design-questions.md
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-19T00:23:03Z
+**Event**: DECISION_RECORDED
+**Stage**: functional-design
+**Decision**: U2 화면 기반 기능 설계 질문 5건을 어떤 방식으로 답할지
+**Options**: Guide me,I'll edit the file,Chat
+**Unit**: u2-web-foundation
+
+---
+
+## Human Turn
+**Timestamp**: 2026-09-19T00:23:36Z
+**Event**: HUMAN_TURN
+**Session**: 183102d5-5579-4ce1-8c7c-860a7b96d59f
+
+---
+
+## Question Answered
+**Timestamp**: 2026-09-19T00:23:43Z
+**Event**: QUESTION_ANSWERED
+**Stage**: functional-design
+**Details**: Guide me
+**Unit**: u2-web-foundation
+
+---
+
+## Decision Recorded
+**Timestamp**: 2026-09-19T00:23:51Z
+**Event**: DECISION_RECORDED
+**Stage**: functional-design
+**Decision**: Q1 서비스 안내 네 항목 문구 / Q2 동의 확인 실패 시 동작 / Q3 홈의 목표·기록 자리 범위
+**Options**: Q1: A 초안 제시,Q1: B 직접 작성,Q1: C 3.5로 이관,Q2: A 관문 상태 화면,Q2: B 동의 화면으로,Q2: C 브라우저 저장,Q3: A 실패 상태,Q3: B 비어 있음,Q3: C 렌더 안 함
+**Unit**: u2-web-foundation
+
+---
