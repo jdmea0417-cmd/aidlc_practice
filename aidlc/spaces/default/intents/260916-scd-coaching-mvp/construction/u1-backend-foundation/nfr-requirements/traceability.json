@@ -1,0 +1,47 @@
+{
+  "stage": "nfr-requirements",
+  "unit": "u1-backend-foundation",
+  "upstream_ids": [
+    "NFR1",
+    "NFR2",
+    "NFR3",
+    "NFR4",
+    "NFR5",
+    "NFR6",
+    "NFR7",
+    "NFR8",
+    "NFR9",
+    "NFR10",
+    "NFR11",
+    "NFR12",
+    "NFR13",
+    "NFR14"
+  ],
+  "coverage": [
+    { "id": "NFR1", "status": "N/A", "target": "화면 폭 요구사항 — 이 단위는 kind: service 로 화면을 만들지 않는다. u2-web-foundation 이 소유한다" },
+    { "id": "NFR2", "status": "N/A", "target": "접근성 요구사항 — 화면 요소에 대한 것이라 이 단위에 적용 대상이 없다. u2-web-foundation 이 소유한다" },
+    { "id": "NFR3", "status": "OK", "target": "NFR3.1, NFR3.2, NFR3.3 — 이 단위가 소유한 세 엔드포인트의 응답 시간 목표. 상위 NFR3 의 분석 경로 목표(접수 1초·완료 3초)는 u5-f03-assessment 가 지킨다" },
+    { "id": "NFR4", "status": "OK", "target": "NFR4.1, NFR4.2 — 운영 파라미터 네 값과 제공자 타임아웃 두 값을 설정으로 노출" },
+    { "id": "NFR5", "status": "OK", "target": "NFR5.1, NFR5.2, NFR5.3, NFR5.4 — 분석 모드 fail closed 와 mock 기본 경로" },
+    { "id": "NFR6", "status": "OK", "target": "NFR6.1~NFR6.9 — 인증 부재의 경계, 비밀값 취급, 신뢰하지 않는 입력, 내부 정보 비노출" },
+    { "id": "NFR7", "status": "OK", "target": "NFR7.1 — 이 단위가 만드는 공통 예외 처리기의 미처리 예외 기본 메시지에 금지 표현이 들어가지 않는다. 화면 문구와 Mock 픽스처 문구는 이 단위가 만들지 않으므로 그 부분은 각 소유 단위가 지킨다 (security-requirements.md §2.5 아래 구분선 참고)" },
+    { "id": "NFR8", "status": "OK", "target": "NFR8.1 — 이 단위가 만드는 공통 예외 처리기의 미처리 예외 기본 메시지는 한국어다. 봉투의 code 는 영어 고정 토큰으로 둔다. 화면 문구는 u2-web-foundation, 기능별 오류 메시지는 각 기능 단위가 지킨다" },
+    { "id": "NFR9", "status": "N/A", "target": "화면 상태 네 가지 — 화면 요구사항이라 이 단위에 적용 대상이 없다. u2-web-foundation 이 소유한다" },
+    { "id": "NFR10", "status": "OK", "target": "NFR10.1~NFR10.15 — 상위 NFR10 의 두 수용 기준(AC9.1.1, AC9.3.4)은 NFR10.1·NFR10.5·NFR10.6·NFR10.11·NFR10.12 가 직접 받는다. 나머지(NFR10.2~NFR10.4, NFR10.13~NFR10.15)는 NFR10 을 '로컬 실행 환경에서 시스템이 어떻게 행동하는가'로 넓혀 붙인 것이며, 실제 출처는 계약 공통 규칙과 이 단위의 BR5·BR7 이다. 그 구분선은 reliability-requirements.md §2.5 에 적었다" },
+    { "id": "NFR11", "status": "OK", "target": "NFR11.1 — 시드와 픽스처는 합성 데이터만 담는다" },
+    { "id": "NFR12", "status": "OK", "target": "NFR12.1~NFR12.9 — 요청·작업 식별자, 로그 형식과 위치, 전사 본문·비밀값 제외" },
+    { "id": "NFR13", "status": "OK", "target": "NFR13.3, NFR13.4, NFR13.5 — 상위 NFR13 은 '신뢰성 — 외부 호출'로 범위가 좁혀져 있으므로 제공자 호출에 특정된 세 항목만 여기 붙는다. 응답 이후 작업 일반의 실패 기록은 NFR10.13·NFR10.14 로 옮겼다 (reliability-requirements.md §2.5). build-and-test(3.6)는 NFR13 커버리지를 외부 호출 시험으로 판단하되, 작업 실패 기록은 NFR10 쪽에서 따로 확인해야 한다" },
+    { "id": "NFR14", "status": "OK", "target": "NFR14.1, NFR14.2, NFR14.3 — 픽스처 단일 출처, service/ 커버리지 바닥 유지, 테스트에서도 마이그레이션으로 스키마 생성 (tech-stack-decisions.md §5). 교차 참조: NFR11.1(합성 데이터만), NFR4.1(값을 코드에 박지 않음)" }
+  ],
+  "reverse": [
+    { "id": "NFR6.5", "status": "N/A", "target": "제공자 미정 기간에 어느 환경 파일에도 실제 키를 넣지 않는다 — 상위 NFR6 이 아니라 RAID 의존 D2 와 팀 관행 Deployment 에서 나온 운영 규칙이다" },
+    { "id": "NFR10.2", "status": "N/A", "target": "무상태 유지 — 확장성 목표를 두지 않는 대신 나중 선택지를 막지 않으려고 둔 성질이다. 상위 수용 기준이 직접 요구하지 않는다" },
+    { "id": "NFR10.3", "status": "N/A", "target": "연결 수명 — 계약 공통 규칙의 백그라운드 세션 규칙과 BR5.2 에서 나왔다. 상위 수용 기준이 직접 요구하지 않는다" },
+    { "id": "NFR10.4", "status": "N/A", "target": "비차단 — 계약 공통 규칙의 '오래 걸리는 작업은 접수 응답 + 상태 조회'(D-96)에서 나왔다" },
+    { "id": "NFR10.9", "status": "N/A", "target": "되돌리기 절차 — 팀 관행 Deployment 에서 나왔고 수용 기준이 직접 요구하지 않는다" },
+    { "id": "NFR10.10", "status": "N/A", "target": "스키마까지 되돌리는 절차 — 같음" },
+    { "id": "NFR10.13", "status": "N/A", "target": "작업 실패 시 상태 기록 — [spec] W5 7단계와 BR5.2·BR7.5 에서 나왔다. 상위 수용 기준이 직접 요구하지 않는다" },
+    { "id": "NFR10.14", "status": "N/A", "target": "실패 기록을 별도 연결로 — BR5.2 에서 나왔다" },
+    { "id": "NFR10.15", "status": "N/A", "target": "헬스체크 확인 질의 시간 제한 1초 — 이 단계가 새로 정했다. 상위 산출물 functional-spec.md 의 열린 질문 OQ-F4 를 닫은 값이다 (reliability-requirements.md §2.6)" }
+  ]
+}

@@ -7,7 +7,7 @@
 - **Scope**: scd-coach-mvp
 - **Start Date**: 2026-09-16T02:26:33Z
 - **State Version**: 8
-- **Active Agent**: aidlc-delivery-agent
+- **Active Agent**: aidlc-architect-agent
 - **Worktree Path**:
 - **Bolt Refs**:
 - **Practices Affirmed Timestamp**: 2026-09-17T03:43:45Z
@@ -28,11 +28,11 @@
 
 ## Execution Plan Summary
 - **Total Stages**: 21
-- **Completed**: 13
-- **In Progress**: delivery-planning
+- **Completed**: 14
+- **In Progress**: functional-design
 
 ## Runtime State
-- **Revision Count**: 4
+- **Revision Count**: 8
 
 - **Construction Iteration**: unit-major
 
@@ -40,13 +40,37 @@
 
 - **Unit Gate Rhythm**: per-stage
 
+- **Skeleton Stance**: scope-dependent
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+- **Active Unit**: u2-web-foundation
+
+- **Unit State**: in-progress
+
 ## Phase Progress
 <!-- Status values: Pending, Active, Verified, Skipped -->
 
 - **Initialization**: Verified
 - **Ideation**: Verified
-- **Inception**: Active
-- **Construction**: Pending
+- **Inception**: Verified
+- **Construction**: Active
 - **Operation**: Skipped
 
 ## Stage Progress
@@ -75,15 +99,15 @@
 - [x] domain-design — EXECUTE
 - [x] units-generation — EXECUTE
 - [x] contract-design — EXECUTE
-- [-] delivery-planning — EXECUTE
+- [x] delivery-planning — EXECUTE
 
 ### CONSTRUCTION PHASE
 Per unit: [TBD]
-- [ ] functional-design — EXECUTE
-- [ ] nfr-requirements — EXECUTE
-- [ ] nfr-design — EXECUTE
-- [ ] infrastructure-design — EXECUTE
-- [ ] code-generation — EXECUTE
+- [-] functional-design — EXECUTE
+- [-] nfr-requirements — EXECUTE
+- [-] nfr-design — EXECUTE
+- [-] infrastructure-design — EXECUTE
+- [-] code-generation — EXECUTE
 - [ ] build-and-test — EXECUTE
 - [ ] ci-pipeline — EXECUTE
 
@@ -96,14 +120,33 @@ Per unit: [TBD]
 - [ ] performance-validation — SKIP
 - [ ] feedback-optimization — SKIP
 
+## Unit Progress
+<!-- Derived, engine-owned projection; routing ignores hand edits. -->
+| unit | owner | functional-design | nfr-requirements | nfr-design | infrastructure-design | code-generation | gate |
+| --- | --- | --- | --- | --- | --- | --- | --- |
+| u1-backend-foundation | - | [x] | [x] | [x] | [x] | [x] | [x] |
+| u2-web-foundation | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| u10-s-detail-views | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| u11-s-account-auth | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| u13-s-laptop-layout | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| u14-s-recommendation-plus | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| u3-f01-capture | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| u4-f02-context | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| u5-f03-assessment | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| u6-f04-goal | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| u7-f05-practice | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| u8-f06-record | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| u9-f07-correction-deletion | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+| u12-s-guardian-sharing | - | [ ] | [ ] | [ ] | [ ] | [ ] | [ ] |
+
 ## Current Status
-- **Lifecycle Phase**: INCEPTION
-- **Current Stage**: delivery-planning
-- **Next Stage**: functional-design
+- **Lifecycle Phase**: CONSTRUCTION
+- **Current Stage**: functional-design
+- **Next Stage**: nfr-requirements
 - **Status**: Running
-- **Last Updated**: 2026-09-17T07:48:53Z
+- **Last Updated**: 2026-09-19T00:21:35Z
 
 ## Session Resume Point
-- **Last Completed Stage**: contract-design
-- **Next Action**: Execute Delivery Planning
+- **Last Completed Stage**: delivery-planning
+- **Next Action**: Execute Functional Design
 - **Pending Artifacts**: none

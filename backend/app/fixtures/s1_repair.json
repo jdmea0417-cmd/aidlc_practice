@@ -1,0 +1,88 @@
+{
+  "__note": "합성 대화 픽스처 — 이 파일 한 벌이 단일 출처다 (BR4.3, NFR14.1). Mock 제공자가 런타임에 돌려주는 고정 응답과 시험의 기대값을 같은 벌로 다룬다. 출처는 docs/input/05_synthetic-test-data.md §S1 이며, 값을 코드나 시험에 옮겨 적지 않는다. 전부 합성 데이터다 (SC-02).",
+  "conversationKey": "conv_repair_01",
+  "scenarioId": "S1",
+  "title": "명료화·대화 수리 (어려움 + 훈련 연결)",
+  "context": {
+    "relation": "같은 반 친구",
+    "place": "쉬는 시간 교실",
+    "purpose": "주말 이야기",
+    "userGoal": null
+  },
+  "transcripts": {
+    "1": [
+      { "id": "u1", "speaker": "PARTNER", "text": "주말에 뭐 했어?", "unclear": false },
+      { "id": "u2", "speaker": "USER", "text": "민수랑 놀았어.", "unclear": false },
+      { "id": "u3", "speaker": "PARTNER", "text": "민수가 누구야?", "unclear": false },
+      { "id": "u4", "speaker": "USER", "text": "걔 있잖아.", "unclear": false },
+      { "id": "u5", "speaker": "PARTNER", "text": "누군지 모르겠는데…", "unclear": false },
+      { "id": "u6", "speaker": "USER", "text": "아무튼 재밌었어.", "unclear": false }
+    ]
+  },
+  "judgments": {
+    "1": [
+      {
+        "group": "RESPONSE_RELEVANCE",
+        "opportunity": "PRESENT",
+        "result": "OBSERVED",
+        "holdReason": null,
+        "evidence": [
+          { "utteranceId": "u1", "role": "OPPORTUNITY" },
+          { "utteranceId": "u2", "role": "RESPONSE" }
+        ]
+      },
+      {
+        "group": "CLARIFICATION_REPAIR",
+        "opportunity": "PRESENT",
+        "result": "NOT_OBSERVED_THIS_TIME",
+        "holdReason": null,
+        "evidence": [
+          { "utteranceId": "u3", "role": "OPPORTUNITY" },
+          { "utteranceId": "u5", "role": "OPPORTUNITY" },
+          { "utteranceId": "u4", "role": "RESPONSE" },
+          { "utteranceId": "u6", "role": "RESPONSE" }
+        ]
+      },
+      {
+        "group": "TOPIC_MAINTENANCE",
+        "opportunity": "PRESENT",
+        "result": "PARTIAL",
+        "holdReason": null,
+        "evidence": [
+          { "utteranceId": "u5", "role": null },
+          { "utteranceId": "u6", "role": null }
+        ]
+      }
+    ]
+  },
+  "practice": {
+    "__note": "모의 대화 연습 기대값. 판정 규칙의 해석과 화면 문구는 u7-f05-practice 가 소유한다. attemptOrder 2 의 partnerText 는 05 문서가 정하지 않은 자리라 u7 이 확정할 때까지의 자리표시다.",
+    "scenarioTemplateId": "tpl_repair_person_01",
+    "turns": [
+      {
+        "attemptOrder": 1,
+        "partnerText": "그게 누구야?",
+        "judgment": {
+          "group": "CLARIFICATION_REPAIR",
+          "opportunity": "PRESENT",
+          "result": "NOT_OBSERVED_THIS_TIME",
+          "holdReason": null,
+          "performanceMode": "INDEPENDENT",
+          "evidence": []
+        }
+      },
+      {
+        "attemptOrder": 2,
+        "partnerText": "아, 이제 누군지 알겠어.",
+        "judgment": {
+          "group": "CLARIFICATION_REPAIR",
+          "opportunity": "PRESENT",
+          "result": "OBSERVED",
+          "holdReason": null,
+          "performanceMode": "HINTED",
+          "evidence": []
+        }
+      }
+    ]
+  }
+}

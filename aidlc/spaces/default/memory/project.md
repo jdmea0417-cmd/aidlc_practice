@@ -21,6 +21,8 @@
 <!-- The walking skeleton must exercise the legacy service adapter as well -->
 <!-- as the new service boundary. -->
 
+- 걷는 뼈대 Bolt 는 화면 하나를 두 Bolt 로 가르지 않는다. 한 화면이 걸친 작업 단위는 뼈대에 통째로 담아, 뼈대가 커지더라도 화면이 나뉘지 않게 한다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:delivery-planning:2f8aa0b4da73f8660f6b8c83ee57489c7f3db412bd26a634bb0dff71ddc42d93 -->
+
 ## Testing Posture
 
 <!-- Project-specific specialisation. -->
@@ -32,6 +34,10 @@
 ## Deployment
 
 <!-- Project-specific specialisation. -->
+
+- 스키마 마이그레이션 적용은 애플리케이션 기동 흐름에 넣지 않고 별도 단계로 둔다. 기동할 때마다 적용하는 모양은 컨테이너가 동시에 뜰 때 경쟁이 생기고, 전진 방향만 쓰기로 한 관행과도 결이 맞지 않는다. 테스트도 같은 마이그레이션으로 스키마를 만들어 마이그레이션이 실제로 한 번은 실행되게 한다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:functional-design:5a8a9023614c7c0784cd3a7b332a464c12e5758925577f9cb9bdf7c522368c85 -->
+
+- 헬스체크는 프로세스 생존만 보지 않고 저장소에 가벼운 확인 질의를 보내 응답할 때만 정상이라고 답한다. 프로세스만 보는 확인은 컨테이너는 떴는데 저장소에 못 붙은 상태를 통과시켜, 시연 당일 첫 요청에서야 드러나게 한다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:functional-design:d458ab397c24a738126d14f071ec6ec35806085d08dcec2081b50e15273ab3de -->
 
 ## Code Style
 
@@ -152,6 +158,34 @@
 - 테이블을 만드는 사람, 그 테이블에 시드를 넣는 사람, 외래 키가 만드는 순서처럼 서로 묶인 결정은 따로 묻지 않는다. 한 질문 안에서 선택지마다 조합의 결과(어떤 확정 결정이 유지되거나 깨지는지)를 보여 주고 묻는다. (learned 2026-09-17) <!-- cid:260916-scd-coaching-mvp:contract-design:b337ea5ada7a873fb4cccdbe92d18129f0f332ea14398a8307c018bc699dd8d8 -->
 
 - 응답 방식을 바꾸는 답이 확정된 시간 기준 요구사항의 측정 대상을 바꾸면, 요구사항 문서는 고치지 않고 그 단계 산출물에 보완 기준을 적으며 두 문서가 어긋나 보이면 산출물의 그 문단이 기준이라고 명시한다. (learned 2026-09-17) <!-- cid:260916-scd-coaching-mvp:contract-design:03ce74c2b46c02dc06ebe2a430d1cca4ed80f20b2e2fd50c1edd3d104a8ce470 -->
+
+- 팀 구성 단계가 범위 밖이어서 팀 구성표가 없으면 Bolt 를 사람 이름이 아니라 동시 진행 갈래에만 배정하고, 누가 어느 갈래를 맡는지는 그 Bolt 를 시작할 때 정해 결정 기록에 남긴다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:delivery-planning:a5da80a6d48283abcbd0d17c1e42c1cf83c85b5eab37dc3f8afccba9c1430857 -->
+
+- Bolt 순서는 의존 관계의 위상 정렬을 그대로 쓰지 않고 시연 필수선의 흐름 순서로 잡는다. 의존 관계가 허용하는 경로 안에서 고르되, 위상 순서에서 벗어난 자리는 순서 근거 문서에 따로 적는다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:delivery-planning:d3e083fe654c25194bfd9fe56e08923b9f06a05177a0b17c73fb82c4a41f4a67 -->
+
+- 요약 확인이 끝나고 산출물을 쓴 뒤에 그 단계의 남은 질문에 답이 나오면, 산출물을 다시 쓰지 않고 해당 절에만 덧붙여 갱신한다. 앞 절의 확정된 내용은 그대로 둔다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:delivery-planning:bcf680ba63d538ccdd609c88fc597b8457d3473be37c2302bf789596d93c989b -->
+
+- 기반 단위가 다른 단위 소유의 테이블까지 한 리비전으로 만들 때는, 소유하지 않는 테이블마다 "이번에 적는 것 / 소유 단위에 남기는 것"을 경계표로 등록한다. 상위 문서가 글로 확정한 것만 적고, 정해지지 않은 타입·제약·허용값은 추측해 적지 않는다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:functional-design:96a5045dc806ab7dcbe88055d231e571dcd637181cf378960cbe25ffa5558dff -->
+
+- 대화의 전사 상태와 분석 상태는 컬럼 하나로 합치지 않고 두 값으로 나눠 둔다. 재분석이 전사 완료 정보를 덮어쓰지 않아 재분석 중에도 화면이 전사를 계속 보여 줄 수 있다. 대신 말이 되지 않는 조합을 막는 규칙을 함께 둔다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:functional-design:fe6bd45ee6e514352daea99f2300aabf6f642c0566aa89b8592c18c6cf888d5d -->
+
+- 설치된 실행 파일이 "알 수 없는 명령"으로 실패해도 그것만으로 기능이 지원되지 않는다고 판단하지 않는다. 저장소가 함께 들여온 도구에 그 명령이 있는지, 버전 기록이 무엇인지, 대체 호출 경로가 되는지를 먼저 확인한다. 버전 번호가 같아도 실행 파일이 뒤처진 빌드일 수 있다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:functional-design:07fb555911f8c228ffa6f5dfc240f5bd6634f5d9928a74e15c1d1a0b341a8f2c -->
+
+- 도구가 실패했을 때, 위 확인을 마치기 전에는 사용자가 이미 확정한 결정을 되돌리자고 제안하지 않는다. 확인 비용은 명령 몇 줄이고, 제안의 비용은 이미 내린 결정 하나다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:functional-design:50eec866a392757a96d1d1729d599d7c8198d1ac6df07e1c02f0447652b2c71c -->
+
+- 단계 질문을 만들기 전에 상위 산출물의 열린 질문 표에서 이 단계가 담당으로 지정된 항목을 먼저 찾아 질문에 넣는다. 그러지 않으면 배정받은 질문을 닫지 않고 다음 단계로 재위임하게 되고, 그 사실은 검토에 가서야 드러난다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:nfr-requirements:1571a5eebbc49e5c7a935296984681b5d1e6e8cb20d8b98eaa8a8353645f1137 -->
+
+- 상위 항목의 글자 그대로의 범위보다 넓은 하위 요구사항을 그 밑에 번호로 붙일 때는, 넓혔다는 사실과 각 항목의 실제 출처를 같은 문서에 구분선으로 적고 추적 파일에도 같은 사실을 적는다. 구분선이 없으면 다음 단계가 커버리지를 잘못 판단한다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:nfr-requirements:cdb0cf609efc80fa0f0c0c7b0e6db2a8f77e515dce32c1bd55afa4bfb6c5f45c -->
+
+- 요구사항이 무엇을 지킬지 정했으면 설계 문서는 그것을 어느 구조가 지키게 하는지를 쓴다. 각 장치마다 무엇을 구조적으로 불가능하게 하는지를 표로 적고, 사람의 주의력에만 남는 규칙은 검사나 구조로 바꿀 방법을 함께 적는다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:nfr-design:535d597a85f3533e361bbe06424ce9ede6ad0a1c0bcf126a7d24f1010d48e885 -->
+
+- 어떤 장치를 이번 범위에 두지 않기로 하면 근거만 적지 말고 나중에 필요해졌을 때 어디에 붙이는지를 함께 적는다. 그 자리가 한 곳으로 모여 있지 않으면 그것 자체가 지금 구조를 다시 볼 신호다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:nfr-design:90d02d54e62b5d8fe5d6856dce7c1b320814e5799dd0eee9a310bcff9b648d2a -->
+
+- 함께 보는 전문 지식이 이 프로젝트의 전제와 맞지 않으면 억지로 대응시키지 않는다. 적용되는 부분만 옮기고, 적용되지 않는다는 사실과 그 이유를 산출물 머리에 밝혀 다음 단계가 누락으로 읽지 않게 한다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:nfr-design:71252def5e3164ac96a42b9a7c3ff5345182c81ac07b474e920e0f2d6021d164 -->
+
+- 추적 파일의 상위 항목 목록에는 이 단계가 답한 항목뿐 아니라 산출물 본문이 근거로 인용한 항목도 모두 넣는다. 본문이 인용했는데 추적에 없으면 다음 단계가 커버리지를 잘못 판단하고, 이 누락은 검토에 가서야 드러난다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:infrastructure-design:96af1efce048082a2cb339a55645cf55f0b94f57fb52f4e3da9ada46fe2af621 -->
+
+- 검토자에게 검증 도구를 돌리게 할 때는 실행 흔적이 작업 공간에 남지 않는 형태로 명령을 준다. 파이썬이면 바이트코드 생성을 끄고 캐시 제공자를 비활성화하며 커버리지 파일을 남기지 않는다. 그런 파일은 무시 규칙에 들어 있어도 소스 지문 계산에는 포함되므로, 검토자가 성실히 검증할수록 판정이 기록되지 못하는 상태가 된다. 검토를 요청하기 전에 기존 캐시도 함께 지운다. (learned 2026-09-18) <!-- cid:260916-scd-coaching-mvp:code-generation:75b431cc5d5398ac63bb203e0b8a176bd9f28528a263b90299b5d76e000b9388 -->
 
 ## Forbidden
 - NEVER add any H2 heading other than `Q<n>`, `Requested Changes Feedback`, or a

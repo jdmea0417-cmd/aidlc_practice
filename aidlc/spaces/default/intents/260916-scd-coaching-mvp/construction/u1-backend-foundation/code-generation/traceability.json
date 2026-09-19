@@ -1,0 +1,554 @@
+{
+  "stage": "code-generation",
+  "unit": "u1-backend-foundation",
+  "notes_on_partial": "PARTIAL 은 이 단위가 자기 몫을 다 하지 않았다는 뜻이 아니라, 그 항목이 U1 의 경계를 넘어 다른 단위가 마저 채워야 한다는 뜻이다. 각 PARTIAL 항목의 note 필드가 U1 이 무엇까지 만들었고 남은 몫의 담당이 누구인지를 적는다 (검토 지적 R-02).",
+  "upstream_ids": [
+    "AC9.1.1",
+    "AC9.1.2",
+    "AC9.1.3",
+    "AC9.1.4",
+    "AC9.2.1",
+    "AC9.2.2",
+    "AC9.2.3",
+    "AC9.3.4",
+    "BR1.1",
+    "BR1.2",
+    "BR1.3",
+    "BR2.1",
+    "BR2.2",
+    "BR2.3",
+    "BR3.1",
+    "BR3.2",
+    "BR4.1",
+    "BR4.2",
+    "BR4.3",
+    "BR5.1",
+    "BR5.2",
+    "BR5.3",
+    "BR6.1",
+    "BR6.2",
+    "BR6.3",
+    "BR6.4",
+    "BR7.1",
+    "BR7.2",
+    "BR7.3",
+    "BR7.4",
+    "BR7.5",
+    "BR8.1",
+    "BR8.2",
+    "NFR3.1",
+    "NFR3.2",
+    "NFR3.3",
+    "NFR4.1",
+    "NFR4.2",
+    "NFR5.1",
+    "NFR5.2",
+    "NFR5.3",
+    "NFR5.4",
+    "NFR6.1",
+    "NFR6.2",
+    "NFR6.3",
+    "NFR6.4",
+    "NFR6.5",
+    "NFR6.6",
+    "NFR6.7",
+    "NFR6.8",
+    "NFR6.9",
+    "NFR10.1",
+    "NFR10.3",
+    "NFR10.4",
+    "NFR10.5",
+    "NFR10.10",
+    "NFR10.11",
+    "NFR10.12",
+    "NFR10.13",
+    "NFR10.14",
+    "NFR10.15",
+    "NFR11.1",
+    "NFR12.1",
+    "NFR12.4",
+    "NFR12.5",
+    "NFR12.6",
+    "NFR12.7",
+    "NFR12.8",
+    "NFR13.3",
+    "NFR13.4",
+    "NFR13.5",
+    "NFR14.1",
+    "NFR14.2",
+    "NFR14.3",
+    "FR11.1",
+    "FR11.2",
+    "C1",
+    "C14",
+    "C15",
+    "C16",
+    "TC-05",
+    "TC-06",
+    "TC-08",
+    "TC-10",
+    "TC-13",
+    "TC-14",
+    "SC-02",
+    "SC-04",
+    "US9.1",
+    "US9.2"
+  ],
+  "coverage": [
+    {
+      "id": "AC9.1.1",
+      "status": "OK",
+      "target": "docker-compose.yml"
+    },
+    {
+      "id": "AC9.1.2",
+      "status": "OK",
+      "target": "backend/tests/unit/test_config_analysis_mode.py"
+    },
+    {
+      "id": "AC9.1.3",
+      "status": "OK",
+      "target": "backend/tests/unit/test_config_analysis_mode.py"
+    },
+    {
+      "id": "AC9.1.4",
+      "status": "OK",
+      "target": "backend/.env.example"
+    },
+    {
+      "id": "AC9.2.1",
+      "status": "OK",
+      "target": "backend/tests/integration/test_me_endpoint.py"
+    },
+    {
+      "id": "AC9.2.2",
+      "status": "OK",
+      "target": "backend/tests/unit/test_mock_llm_provider.py"
+    },
+    {
+      "id": "AC9.2.3",
+      "status": "OK",
+      "target": "backend/tests/unit/test_mock_stt_provider.py"
+    },
+    {
+      "id": "AC9.3.4",
+      "status": "OK",
+      "target": "backend/app/api/common/health.py"
+    },
+    {
+      "id": "BR1.1",
+      "status": "OK",
+      "target": "backend/app/config.py"
+    },
+    {
+      "id": "BR1.2",
+      "status": "OK",
+      "target": "backend/app/config.py"
+    },
+    {
+      "id": "BR1.3",
+      "status": "OK",
+      "target": "backend/app/config.py"
+    },
+    {
+      "id": "BR2.1",
+      "status": "OK",
+      "target": "backend/scripts/seed.py"
+    },
+    {
+      "id": "BR2.2",
+      "status": "OK",
+      "target": "backend/app/service/account/service.py"
+    },
+    {
+      "id": "BR2.3",
+      "status": "OK",
+      "target": "backend/app/service/current_user.py"
+    },
+    {
+      "id": "BR3.1",
+      "status": "OK",
+      "target": "backend/app/service/health.py"
+    },
+    {
+      "id": "BR3.2",
+      "status": "OK",
+      "target": "backend/app/api/common/health.py"
+    },
+    {
+      "id": "BR4.1",
+      "status": "OK",
+      "target": "backend/app/fixtures/loader.py"
+    },
+    {
+      "id": "BR4.2",
+      "status": "OK",
+      "target": "backend/app/fixtures/loader.py"
+    },
+    {
+      "id": "BR4.3",
+      "status": "OK",
+      "target": "backend/app/fixtures/s1_repair.json"
+    },
+    {
+      "id": "BR5.1",
+      "status": "OK",
+      "target": "backend/app/common/unit_of_work.py"
+    },
+    {
+      "id": "BR5.2",
+      "status": "OK",
+      "target": "backend/app/common/unit_of_work.py"
+    },
+    {
+      "id": "BR5.3",
+      "status": "OK",
+      "target": "backend/app/service/account/service.py"
+    },
+    {
+      "id": "BR6.1",
+      "status": "OK",
+      "target": "backend/app/common/middleware.py"
+    },
+    {
+      "id": "BR6.2",
+      "status": "OK",
+      "target": "backend/app/common/request_context.py"
+    },
+    {
+      "id": "BR6.3",
+      "status": "OK",
+      "target": "backend/app/common/logging.py"
+    },
+    {
+      "id": "BR6.4",
+      "status": "OK",
+      "target": "backend/.env.example"
+    },
+    {
+      "id": "BR7.1",
+      "status": "OK",
+      "target": "backend/app/repository/models.py"
+    },
+    {
+      "id": "BR7.2",
+      "status": "PARTIAL",
+      "target": "backend/app/repository/models.py",
+      "note": "분석 중 중복 요청 거부. U1 은 상태 값과 그 조합을 막는 DB 검사 제약까지 만들었고, 거부를 실제로 수행하는 분석 시작 경로는 u5-f03-assessment 가 소유한다 (code-summary.md §5)."
+    },
+    {
+      "id": "BR7.3",
+      "status": "OK",
+      "target": "backend/app/repository/models.py"
+    },
+    {
+      "id": "BR7.4",
+      "status": "PARTIAL",
+      "target": "backend/app/repository/models.py",
+      "note": "내부 상태값을 API 값으로 바꾸는 규칙. U1 은 내부 허용값과 entities.md §4 의 대응표를 스키마로 고정했고, 변환 코드는 conversations 컬럼 주인인 u3-f01-capture 가 쓴다 (entities.md §4, code-summary.md §5)."
+    },
+    {
+      "id": "BR7.5",
+      "status": "PARTIAL",
+      "target": "backend/app/repository/models.py",
+      "note": "실패 사유에 따라 재시도 시작점이 갈린다. U1 은 사유 값(STORAGE / TRANSCRIPTION)과 실패 상태에서만 채워지는 검사 제약을 만들었고, 갈림을 실행하는 재시도 경로는 u3-f01-capture 가 쓴다 (reliability-design.md §4)."
+    },
+    {
+      "id": "BR8.1",
+      "status": "OK",
+      "target": "backend/app/repository/models.py"
+    },
+    {
+      "id": "BR8.2",
+      "status": "OK",
+      "target": "backend/tests/unit/test_schema_no_audio_blob.py"
+    },
+    {
+      "id": "NFR3.1",
+      "status": "OK",
+      "target": "backend/tests/integration/test_health_endpoint.py"
+    },
+    {
+      "id": "NFR3.2",
+      "status": "OK",
+      "target": "backend/tests/integration/test_me_endpoint.py"
+    },
+    {
+      "id": "NFR3.3",
+      "status": "OK",
+      "target": "backend/tests/integration/test_consent_endpoint.py"
+    },
+    {
+      "id": "NFR4.1",
+      "status": "OK",
+      "target": "backend/tests/unit/test_config_values.py"
+    },
+    {
+      "id": "NFR4.2",
+      "status": "OK",
+      "target": "backend/app/config.py"
+    },
+    {
+      "id": "NFR5.1",
+      "status": "OK",
+      "target": "backend/app/config.py"
+    },
+    {
+      "id": "NFR5.2",
+      "status": "OK",
+      "target": "backend/app/config.py"
+    },
+    {
+      "id": "NFR5.3",
+      "status": "OK",
+      "target": "backend/app/providers/factory.py"
+    },
+    {
+      "id": "NFR5.4",
+      "status": "OK",
+      "target": "backend/app/config.py"
+    },
+    {
+      "id": "NFR6.1",
+      "status": "OK",
+      "target": "backend/app/service/current_user.py"
+    },
+    {
+      "id": "NFR6.2",
+      "status": "OK",
+      "target": "backend/tests/unit/test_current_user.py"
+    },
+    {
+      "id": "NFR6.3",
+      "status": "OK",
+      "target": "backend/.env.example"
+    },
+    {
+      "id": "NFR6.4",
+      "status": "OK",
+      "target": "backend/.env.example"
+    },
+    {
+      "id": "NFR6.5",
+      "status": "OK",
+      "target": "backend/app/providers/llm_live.py"
+    },
+    {
+      "id": "NFR6.6",
+      "status": "OK",
+      "target": "backend/app/service/prompt_builder.py"
+    },
+    {
+      "id": "NFR6.7",
+      "status": "PARTIAL",
+      "target": "backend/app/providers/llm_live.py",
+      "note": "제공자 출력을 저장 전에 응답 모델로 검증하고 맞지 않으면 거부한다. U1 은 포트 DTO 와 live 뼈대까지 만들었고, 실제 출력 검증은 판정을 저장하는 u5-f03-assessment 가 C10 한 입구에서 한다 (code-summary.md §5)."
+    },
+    {
+      "id": "NFR6.8",
+      "status": "OK",
+      "target": "backend/app/api/account/schemas.py"
+    },
+    {
+      "id": "NFR6.9",
+      "status": "OK",
+      "target": "backend/app/common/error_handlers.py"
+    },
+    {
+      "id": "NFR10.1",
+      "status": "OK",
+      "target": "docker-compose.yml"
+    },
+    {
+      "id": "NFR10.3",
+      "status": "OK",
+      "target": "backend/app/db.py"
+    },
+    {
+      "id": "NFR10.4",
+      "status": "OK",
+      "target": "backend/app/common/unit_of_work.py"
+    },
+    {
+      "id": "NFR10.5",
+      "status": "OK",
+      "target": "backend/app/api/common/health.py"
+    },
+    {
+      "id": "NFR10.10",
+      "status": "OK",
+      "target": "docker-compose.yml"
+    },
+    {
+      "id": "NFR10.11",
+      "status": "OK",
+      "target": "backend/app/api/common/health.py"
+    },
+    {
+      "id": "NFR10.12",
+      "status": "OK",
+      "target": "backend/tests/integration/test_health_endpoint.py"
+    },
+    {
+      "id": "NFR10.13",
+      "status": "OK",
+      "target": "backend/app/common/unit_of_work.py"
+    },
+    {
+      "id": "NFR10.14",
+      "status": "OK",
+      "target": "backend/tests/unit/test_unit_of_work.py"
+    },
+    {
+      "id": "NFR10.15",
+      "status": "OK",
+      "target": "backend/app/repository/health.py"
+    },
+    {
+      "id": "NFR11.1",
+      "status": "OK",
+      "target": "backend/app/fixtures/constants.py"
+    },
+    {
+      "id": "NFR12.1",
+      "status": "OK",
+      "target": "backend/app/common/provider_call.py"
+    },
+    {
+      "id": "NFR12.4",
+      "status": "OK",
+      "target": "backend/app/common/logging.py"
+    },
+    {
+      "id": "NFR12.5",
+      "status": "OK",
+      "target": "backend/app/common/middleware.py"
+    },
+    {
+      "id": "NFR12.6",
+      "status": "OK",
+      "target": "backend/app/common/request_context.py"
+    },
+    {
+      "id": "NFR12.7",
+      "status": "OK",
+      "target": "backend/app/common/provider_call.py"
+    },
+    {
+      "id": "NFR12.8",
+      "status": "OK",
+      "target": "backend/tests/unit/test_logging_fields.py"
+    },
+    {
+      "id": "NFR13.3",
+      "status": "OK",
+      "target": "backend/app/common/provider_call.py"
+    },
+    {
+      "id": "NFR13.4",
+      "status": "OK",
+      "target": "backend/tests/unit/test_provider_call.py"
+    },
+    {
+      "id": "NFR13.5",
+      "status": "OK",
+      "target": "backend/app/common/provider_call.py"
+    },
+    {
+      "id": "NFR14.1",
+      "status": "OK",
+      "target": "backend/app/fixtures/loader.py"
+    },
+    {
+      "id": "NFR14.2",
+      "status": "OK",
+      "target": "backend/pyproject.toml"
+    },
+    {
+      "id": "NFR14.3",
+      "status": "OK",
+      "target": "backend/tests/conftest.py"
+    },
+    {
+      "id": "FR11.1",
+      "status": "OK",
+      "target": "backend/app/service/current_user.py"
+    },
+    {
+      "id": "FR11.2",
+      "status": "OK",
+      "target": "backend/app/repository/models.py"
+    },
+    {
+      "id": "C1",
+      "status": "OK",
+      "target": "backend/app/api/account/routes.py"
+    },
+    {
+      "id": "C14",
+      "status": "OK",
+      "target": "backend/app/service/ports.py"
+    },
+    {
+      "id": "C15",
+      "status": "OK",
+      "target": "backend/alembic/versions/0001_initial_schema.py"
+    },
+    {
+      "id": "C16",
+      "status": "PARTIAL",
+      "target": "backend/scripts/seed.py",
+      "note": "시드 상태 9개 중 U1 몫인 base·consented·s1-transcribed 셋을 만들었다. base 의 시나리오 원형은 기존 명세가 이름을 적은 tpl_repair_person_01 하나만 넣었다 — 나머지 다섯의 식별자·내용이 어디에도 글로 없어 지어내면 BR8.1 을 어긴다. 담당은 u7-f05-practice (seed.py 머리말, code-summary.md §6)."
+    },
+    {
+      "id": "TC-05",
+      "status": "OK",
+      "target": "backend/tests/unit/test_schema_no_audio_blob.py"
+    },
+    {
+      "id": "TC-06",
+      "status": "OK",
+      "target": "backend/app/service/ports.py"
+    },
+    {
+      "id": "TC-08",
+      "status": "OK",
+      "target": "backend/tests/unit/test_prompt_builder.py"
+    },
+    {
+      "id": "TC-10",
+      "status": "OK",
+      "target": "backend/app/repository/models.py"
+    },
+    {
+      "id": "TC-13",
+      "status": "OK",
+      "target": "backend/tests/unit/test_schema_no_audio_blob.py"
+    },
+    {
+      "id": "TC-14",
+      "status": "OK",
+      "target": "backend/tests/unit/test_layer_boundaries.py"
+    },
+    {
+      "id": "SC-02",
+      "status": "OK",
+      "target": "backend/app/fixtures/s3_unclear.json"
+    },
+    {
+      "id": "SC-04",
+      "status": "OK",
+      "target": "backend/tests/unit/test_config_analysis_mode.py"
+    },
+    {
+      "id": "US9.1",
+      "status": "OK",
+      "target": "backend/app/main.py"
+    },
+    {
+      "id": "US9.2",
+      "status": "OK",
+      "target": "backend/app/api/account/routes.py"
+    }
+  ]
+}

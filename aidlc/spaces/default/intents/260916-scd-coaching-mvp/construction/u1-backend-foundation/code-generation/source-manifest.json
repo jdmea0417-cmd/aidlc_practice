@@ -1,0 +1,307 @@
+{
+  "stage": "code-generation",
+  "unit": "u1-backend-foundation",
+  "version": 1,
+  "writes": [
+    {
+      "path": "backend/.env.example"
+    },
+    {
+      "path": "backend/Dockerfile"
+    },
+    {
+      "path": "backend/alembic.ini"
+    },
+    {
+      "path": "backend/alembic/env.py"
+    },
+    {
+      "path": "backend/alembic/script.py.mako"
+    },
+    {
+      "path": "backend/alembic/versions/0001_initial_schema.py"
+    },
+    {
+      "path": "backend/app/__init__.py"
+    },
+    {
+      "path": "backend/app/api/__init__.py"
+    },
+    {
+      "path": "backend/app/api/account/__init__.py"
+    },
+    {
+      "path": "backend/app/api/account/routes.py"
+    },
+    {
+      "path": "backend/app/api/account/schemas.py"
+    },
+    {
+      "path": "backend/app/api/assessment/__init__.py"
+    },
+    {
+      "path": "backend/app/api/common/__init__.py"
+    },
+    {
+      "path": "backend/app/api/common/health.py"
+    },
+    {
+      "path": "backend/app/api/conversation/__init__.py"
+    },
+    {
+      "path": "backend/app/api/privacy/__init__.py"
+    },
+    {
+      "path": "backend/app/api/record/__init__.py"
+    },
+    {
+      "path": "backend/app/api/training/__init__.py"
+    },
+    {
+      "path": "backend/app/common/__init__.py"
+    },
+    {
+      "path": "backend/app/common/error_handlers.py"
+    },
+    {
+      "path": "backend/app/common/exceptions.py"
+    },
+    {
+      "path": "backend/app/common/logging.py"
+    },
+    {
+      "path": "backend/app/common/middleware.py"
+    },
+    {
+      "path": "backend/app/common/provider_call.py"
+    },
+    {
+      "path": "backend/app/common/request_context.py"
+    },
+    {
+      "path": "backend/app/common/unit_of_work.py"
+    },
+    {
+      "path": "backend/app/config.py"
+    },
+    {
+      "path": "backend/app/db.py"
+    },
+    {
+      "path": "backend/app/fixtures/__init__.py"
+    },
+    {
+      "path": "backend/app/fixtures/constants.py"
+    },
+    {
+      "path": "backend/app/fixtures/loader.py"
+    },
+    {
+      "path": "backend/app/fixtures/s1_repair.json"
+    },
+    {
+      "path": "backend/app/fixtures/s2_topic.json"
+    },
+    {
+      "path": "backend/app/fixtures/s3_unclear.json"
+    },
+    {
+      "path": "backend/app/main.py"
+    },
+    {
+      "path": "backend/app/prompts/__init__.py"
+    },
+    {
+      "path": "backend/app/prompts/assess_v1.md"
+    },
+    {
+      "path": "backend/app/prompts/loader.py"
+    },
+    {
+      "path": "backend/app/providers/__init__.py"
+    },
+    {
+      "path": "backend/app/providers/factory.py"
+    },
+    {
+      "path": "backend/app/providers/llm_live.py"
+    },
+    {
+      "path": "backend/app/providers/llm_mock.py"
+    },
+    {
+      "path": "backend/app/providers/stt_live.py"
+    },
+    {
+      "path": "backend/app/providers/stt_mock.py"
+    },
+    {
+      "path": "backend/app/repository/__init__.py"
+    },
+    {
+      "path": "backend/app/repository/account/__init__.py"
+    },
+    {
+      "path": "backend/app/repository/account/repository.py"
+    },
+    {
+      "path": "backend/app/repository/assessment/__init__.py"
+    },
+    {
+      "path": "backend/app/repository/conversation/__init__.py"
+    },
+    {
+      "path": "backend/app/repository/health.py"
+    },
+    {
+      "path": "backend/app/repository/models.py"
+    },
+    {
+      "path": "backend/app/repository/privacy/__init__.py"
+    },
+    {
+      "path": "backend/app/repository/record/__init__.py"
+    },
+    {
+      "path": "backend/app/repository/training/__init__.py"
+    },
+    {
+      "path": "backend/app/service/__init__.py"
+    },
+    {
+      "path": "backend/app/service/account/__init__.py"
+    },
+    {
+      "path": "backend/app/service/account/service.py"
+    },
+    {
+      "path": "backend/app/service/assessment/__init__.py"
+    },
+    {
+      "path": "backend/app/service/conversation/__init__.py"
+    },
+    {
+      "path": "backend/app/service/current_user.py"
+    },
+    {
+      "path": "backend/app/service/health.py"
+    },
+    {
+      "path": "backend/app/service/ports.py"
+    },
+    {
+      "path": "backend/app/service/privacy/__init__.py"
+    },
+    {
+      "path": "backend/app/service/prompt_builder.py"
+    },
+    {
+      "path": "backend/app/service/record/__init__.py"
+    },
+    {
+      "path": "backend/app/service/training/__init__.py"
+    },
+    {
+      "path": "backend/pyproject.toml"
+    },
+    {
+      "path": "backend/scripts/check-full.sh"
+    },
+    {
+      "path": "backend/scripts/check.sh"
+    },
+    {
+      "path": "backend/scripts/migrate.sh"
+    },
+    {
+      "path": "backend/scripts/seed.py"
+    },
+    {
+      "path": "backend/tests/__init__.py"
+    },
+    {
+      "path": "backend/tests/conftest.py"
+    },
+    {
+      "path": "backend/tests/integration/__init__.py"
+    },
+    {
+      "path": "backend/tests/integration/test_consent_endpoint.py"
+    },
+    {
+      "path": "backend/tests/integration/test_health_endpoint.py"
+    },
+    {
+      "path": "backend/tests/integration/test_me_endpoint.py"
+    },
+    {
+      "path": "backend/tests/integration/test_migration_applied.py"
+    },
+    {
+      "path": "backend/tests/integration/test_seed_states.py"
+    },
+    {
+      "path": "backend/tests/integration/test_user_repository.py"
+    },
+    {
+      "path": "backend/tests/unit/__init__.py"
+    },
+    {
+      "path": "backend/tests/unit/test_account_service.py"
+    },
+    {
+      "path": "backend/tests/unit/test_config_analysis_mode.py"
+    },
+    {
+      "path": "backend/tests/unit/test_config_values.py"
+    },
+    {
+      "path": "backend/tests/unit/test_current_user.py"
+    },
+    {
+      "path": "backend/tests/unit/test_error_envelope.py"
+    },
+    {
+      "path": "backend/tests/unit/test_fixture_loader.py"
+    },
+    {
+      "path": "backend/tests/unit/test_layer_boundaries.py"
+    },
+    {
+      "path": "backend/tests/unit/test_logging_fields.py"
+    },
+    {
+      "path": "backend/tests/unit/test_mock_llm_provider.py"
+    },
+    {
+      "path": "backend/tests/unit/test_mock_stt_provider.py"
+    },
+    {
+      "path": "backend/tests/unit/test_prompt_builder.py"
+    },
+    {
+      "path": "backend/tests/unit/test_prompt_loader.py"
+    },
+    {
+      "path": "backend/tests/unit/test_provider_call.py"
+    },
+    {
+      "path": "backend/tests/unit/test_provider_factory.py"
+    },
+    {
+      "path": "backend/tests/unit/test_request_context.py"
+    },
+    {
+      "path": "backend/tests/unit/test_schema_no_audio_blob.py"
+    },
+    {
+      "path": "backend/tests/unit/test_unit_of_work.py"
+    },
+    {
+      "path": "backend/uv.lock"
+    },
+    {
+      "path": "docker-compose.yml"
+    }
+  ]
+}

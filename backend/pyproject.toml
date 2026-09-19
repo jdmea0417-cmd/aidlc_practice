@@ -1,0 +1,79 @@
+[project]
+name = "scd-coach-backend"
+version = "0.1.0"
+description = "SCD 코칭 MVP 백엔드 — U1 백엔드 기반"
+requires-python = ">=3.11,<3.12"
+dependencies = [
+    "fastapi>=0.115,<0.116",
+    "uvicorn[standard]>=0.32,<0.33",
+    "sqlalchemy>=2.0,<2.1",
+    "alembic>=1.14,<1.15",
+    "psycopg[binary]>=3.2,<3.3",
+    "pydantic>=2.9,<3",
+    "pydantic-settings>=2.6,<3",
+    "python-multipart>=0.0.12,<0.1",
+    "httpx>=0.27,<0.29",
+]
+
+[dependency-groups]
+dev = [
+    "pytest>=8.3,<9",
+    "pytest-cov>=6.0,<7",
+    "testcontainers[postgres]>=4.8,<5",
+    "ruff>=0.7,<0.9",
+    "mypy>=1.13,<2",
+]
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["app"]
+
+# --- Ruff: lint 과 format 을 하나로 (team.md Code Style) ---
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+src = ["."]
+
+[tool.ruff.lint]
+select = ["E", "F", "I", "UP", "B", "SIM", "TID", "RUF", "S"]
+
+# TC-14: api 가 repository 를 직접 부르지 않는다. 전역 금지 뒤 아래 per-file-ignores 에서만 해제한다.
+[tool.ruff.lint.flake8-tidy-imports.banned-api]
+"app.repository".msg = "TC-14: 영속성 접근은 service 를 경유한다. api 는 repository 를 import 하지 않는다."
+
+[tool.ruff.lint.per-file-ignores]
+# FastAPI 의 `Depends` 는 기본값 자리에서 부르는 것이 그 프레임워크의 쓰임새다.
+"app/api/**" = ["B008"]
+"app/service/**" = ["TID251"]
+"app/repository/**" = ["TID251"]
+"tests/**" = ["TID251", "S101"]
+"scripts/**" = ["TID251", "S101"]
+"alembic/**" = ["TID251"]
+
+# --- mypy: strict 는 끄되 검사가 실제로 걸리게 (team.md Code Style) ---
+[tool.mypy]
+python_version = "3.11"
+check_untyped_defs = true
+warn_unused_ignores = true
+ignore_missing_imports = true
+plugins = ["pydantic.mypy"]
+
+[[tool.mypy.overrides]]
+module = ["app.service.*"]
+disallow_untyped_defs = true
+
+# --- pytest ---
+[tool.pytest.ini_options]
+testpaths = ["tests"]
+markers = [
+    "integration: 실제 저장소를 띄워 도는 시험 (빠른 루프에서 제외)",
+    "e2e: 종단 시험 (이 단위에는 없다)",
+    "ac(id): 이 시험이 덮는 수용 기준 ID",
+]
+filterwarnings = ["ignore::DeprecationWarning"]
+
+[tool.coverage.run]
+source = ["app/service"]

@@ -83,3 +83,25 @@ aidlc/diagnostics/
 # aidlc/spaces/*/intents/*/<phase>/<stage>/*.md (artifacts + diary).
 .claude/settings.local.json
 # END AI-DLC:gitignore
+
+# ── 팀 항목 (프레임워크 블록 바깥에 둔다 — 마커 안에 넣으면 블록을 다시 쓸 때 사라진다) ──
+# 팀 관행 `team.md` § Way of Working 이 첫 `git add` 전에 넣으라고 못 박은 목록이다.
+
+# 비밀값
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.py[cod]
+.venv/
+.pytest_cache/
+.ruff_cache/
+.mypy_cache/
+.coverage
+htmlcov/
+
+# 업로드 음성 (TC-05 — 음성은 파일 저장소에 두고 DB BLOB 으로 넣지 않는다)
+storage/audio/
+*.webm
